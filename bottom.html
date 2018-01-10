@@ -1,0 +1,49 @@
+<div class="mdui-text-center mianze  mdui-hidden-sm-down">
+	免责声明：影视均来源于互联网，视频版权属于原有版权商。仅供测试和学习交流。</br>
+	若侵犯了您的权益，请发邮件通知站长， 站长邮箱：{ctcms_mail}(#替换@)</br>
+	© 2017 {ctcms_name}. All Rights Reserved. Theme Design by <span mdui-tooltip="{content: 'Tamshen'}" style="cursor:pointer" onclick="window.open('http://tamshen.com')">Tamshen</span>
+</div>
+<div class="mdui-text-center mianze mdui-hidden-md-up">
+		© 2017 {ctcms_name}. All Rights Reserved. </br>Theme Design by <span style="cursor:pointer" onclick="window.open('http://tamshen.com')">Tamshen</span>
+	</div>
+</div>
+
+<script src="{ctcms_indextemplets}/js/tamshen.js"></script>
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+</script>
+<script>
+	var $$ = mdui.JQ;
+	$$('#shoucang').on('click', function() {
+		mdui.snackbar({
+			message: '请按Ctrl+D收藏{ctcms_name}哦~',
+			position: 'top'
+		});
+	});
+	$$('#mbmenu').on('click', function() {
+		$$('#mbmenu2').removeClass('mdui-hidden')
+		$$('#mbmenux').removeClass('mdui-hidden')
+		$$('#mbmenu').addClass('mdui-hidden')
+	});
+	$$('#mbmenux').on('click', function() {
+		$$('#mbmenu').removeClass('mdui-hidden')
+		$$('#mbmenux').addClass('mdui-hidden')
+		$$('#mbmenu2').addClass('mdui-hidden')
+	});
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+{ctcms_head}
+<div class="zydylist">
+    <div class="zybt">
+        <h3>智能检索</h3>
+        <table class="fenleilb" style="margin-bottom:0px;">
+                <tbody>
+                <tr>
+                    <td class="tag-span">
+                        <strong>分类：</strong>
+                    </td>
+                    <td>
+                        {ctcms:class table="class" field="id,name" where="" order="xid asc"}
+                        <a href="[class:link]" class="movietype{if:'{ctcms_cid}'=='[class:id]'} on{end if}">[class:name]</a>
+                        {/ctcms:class}
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+    </div>
+
+
+<div class="mdui-row-xs-6">
+        {ctcms:vod table="vod" field="id,name,pic,info,type,year,addtime" page="24" order="addtime desc"}
+        <div class="mdui-col fllist">
+            <a href="[vod:link]">
+                <div class="spimg mdui-img-rounded">
+                    <span class="{if:'[vod:info]'=='超清'}qxdbd{elseif:'[vod:info]'=='高清'}qxdhd{elseif:'[vod:info]'==''}meiyou{else}qxdts{end if}">[vod:info]</span>
+                    <img src="[vod:pic]" />
+                    <div class="spjj">
+                        <div class="title"><nobr>[vod:name]</nobr></div>
+                        <div class="subtitle"><nobr>[vod:type] / <em>[vod:year]</em></nobr></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {/ctcms:vod}
+    </div>
+
+</div>
+
+<div class="fanye mdui-text-center"{if:{ctcms_pagejs}<2} style="display:none;"{end if}>
+        <ul>
+        <li class="pre"{if:{ctcms_page}<2} style="display:none;"{end if}><a href="{ctcms_pageup}">« </a></li>
+        {ctcms_pagenum_8}
+        <li class="pre"{if:{ctcms_page}>={ctcms_pagenum}} style="display:none;"{end if}><a href="{ctcms_pagedown}"> »</a>
+    
+        </ul>
+    </div>
+{ctcms_bottom}

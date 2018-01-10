@@ -1,0 +1,123 @@
+{ctcms_head} 
+<style>#Snow{z-index: -1;background: rgba(125,137,95,0.0);}</style>
+<script> document.title = "{ctcms_name} - 解析" ; </script>
+<div class="mdui-hidden-sm-down"><!--PC-->
+    <div id="jx" style="display: none;">
+        <div class="bftop" style="height:36px" >
+            <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://api.baiyug.cn/vip/?url={url}')">主线</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://api.662820.com/xnflv/index.php?url={url}')">线路一</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://www.ckplayer.tv/kkflv/index.php?url={url}')">线路二</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://www.97panda.com/kkflv/index.php?url={url}')">线路三</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://jx.myxit.cn/vip/siyun.php?url={url}')">线路四</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://api.51ckm.com/jx.php?url={url}')">线路五</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://www.52jiexi.com/x2/tong.php?url={url}')">线路六</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://api.xfsub.com/index.php?url={url}')">线路七</a>
+        </div>
+        <div class="jxbf">
+            <iframe id="WANG" scrolling="no" allowtransparency="true" frameborder="0" src="" width="100%" height="100%"></iframe>
+        </div>         
+        <div class="bfdb mdui-center mdui-color-light-blue-300">
+            <span>如视频在10秒内无法解析请尝试刷新或更换线路</span>
+        </div>
+    </div>     
+    <div class="mdui-row">
+        <div class="mdui-col-xs-6 mdui-col-sm-3 mdui-hidden-sm-down"></div>
+            <div class="mdui-col-xs-6 mdui-col-sm-6 jxdzsr">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">输入需要解析的地址</label>
+                        <input id="dizhi" class="mdui-textfield-input" type="text" onBlur="replaceSpace(this)"/>
+                    </div>
+                    <button class="mdui-btn mdui-btn-block mdui-color-theme-white mdui-ripple" onclick="myclick('http://api.xfsub.com/index.php?url=')" id="jiexi">解析</button>
+            </div>
+        <div class="mdui-col-xs-6 mdui-col-sm-3 mdui-hidden-sm-down"></div>
+    </div>
+</div><!--PC-end-->
+
+<div class=" mdui-hidden-md-up"><!--MB-->
+    <div id="jx">
+        <div class="bftop" style="height:6px"></div>
+        <div class="jxbf">
+            <iframe id="WANG2" scrolling="no" allowtransparency="true" frameborder="0" src="" width="100%" height="100%"></iframe>
+        </div>
+            <div class="bfdb mdui-center mdui-color-light-blue-300">
+            <span>如视频在10秒内无法解析请尝试刷新或更换线路</span>
+            </div>
+    </div> 
+    <div class="mdui-row">
+            <div class="mdui-col-xs-6 mdui-col-sm-3 mdui-hidden-sm-down"></div>
+                <div class="mdui-col-xs-6 mdui-col-sm-6 jxdzsr">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">输入需要解析的地址</label>
+                        <input id="dizhi2" class="mdui-textfield-input" type="text" onBlur="replaceSpace(this)">
+                    </div>
+                    <button class="mdui-btn mdui-btn-block mdui-text-color-white mdui-ripple mdui-color-light-blue-300" onclick="myclick2('http://api.xfsub.com/index.php?url=')" id="jiexi">解析2</button>
+                </div>
+            <div class="mdui-col-xs-6 mdui-col-sm-3 mdui-hidden-sm-down"></div>
+        </div>
+        <hr>
+        <div class="mdui-center">
+            <p class="mdui-text-center">线路选择</p>
+            <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://api.baiyug.cn/vip/?url={url}')">主线</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://api.662820.com/xnflv/index.php?url={url}')">线路一</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://www.ckplayer.tv/kkflv/index.php?url={url}')">线路二</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://www.97panda.com/kkflv/index.php?url={url}')">线路三</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://jx.myxit.cn/vip/siyun.php?url={url}')">线路四</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://api.51ckm.com/jx.php?url={url}')">线路五</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://www.52jiexi.com/x2/tong.php?url={url}')">线路六</a>
+	        <a class="mdui-btn" href="javascript:void(0)" onclick="myclick('http://api.xfsub.com/index.php?url={url}')">线路七</a>
+        </div>
+</div><!--MB-end-->
+                   
+<div class="zydylist mdui-hidden-sm-down">
+    <div class="zybt"><h3>最热推荐</h3></div>
+    <div class="mdui-row-xs-6">
+        {ctcms:vod table="vod" field="id,name,pic,info,rhits,year,type,addtime"" where="" limit="12" order="rhits desc"}
+        <div class="mdui-col fllist">
+            <a href="[vod:link]">
+                <div class="spimg mdui-img-rounded">
+                    <span class="{if:'[vod:info]'=='超清'}qxdbd{elseif:'[vod:info]'=='高清'}qxdhd{elseif:'[vod:info]'==''}meiyou{else}qxdts{end if}">[vod:info]</span>
+                    <img src="[vod:pic]" />
+                    <div class="spjj">
+                        <div class="title"><nobr>[vod:name]</nobr></div>
+                        <div class="subtitle"><nobr>[vod:type] / <em>[vod:year]</em></nobr></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {/ctcms:vod}
+     </div>
+</div>
+
+
+<script>
+function myclick(str){
+        if ( document.getElementById("dizhi").value=="")   
+        {
+            alert('请输入解析地址!');   
+            return false;  
+        }  
+    var value = document.getElementById("dizhi").value;
+    document.getElementById("WANG").src = (str) + (value);
+    document.getElementById("jx").style = "display: block";
+ return false;
+};
+function myclick2(str){
+    
+    if ( document.getElementById("dizhi2").value=="")   
+    {  
+        alert('请输入解析地址!');   
+        return false;  
+    }  
+var value = document.getElementById("dizhi2").value;
+document.getElementById("WANG2").src = (str) + (value);
+return false;
+};
+</script>
+<script>
+
+</script>
+{ctcms_bottom}
+
+
+
+

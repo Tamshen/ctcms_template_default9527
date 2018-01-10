@@ -1,0 +1,82 @@
+{ctcms_head} 
+<div id="turn" class="turn mdui-img-rounded">
+	<div class="turn-loading"><img src="{ctcms_indextemplets}/img/loading.gif" alt="{ctcms_name}"/></div>
+		<ul class="turn-pic">
+{ctcms:vod table="vod" field="id,name,pic2,info,year,type" where="tid=1|zid=1" limit="5" order="zhits desc"}
+<a href="[vod:playlink]"><li style="background-image: url([vod:pic2]);cursor:pointer"><img title="[vod:name] / [vod:year]" alt="[vod:name]" /></li></a>
+{/ctcms:vod}
+<a href="http://mir2.live/?c=pages&id=index"><li style="background-image: url(//wx3.sinaimg.cn/large/006bfoyggy1fmv44p5ng8j30z40f1tp3.jpg);cursor:pointer"><img title="2018新年快乐" alt="2018新年快乐" /></li></a>
+		</ul>
+</div>
+
+	
+
+
+
+<div class="mdui-row">
+	<div class="mdui-col-xs-12 mdui-col-sm-8">
+		<!--左-->
+		<div class="zydylist">
+			<div class="zybt"><h3>最热推荐</h3></div>
+
+			<div class="mdui-row-xs-4 ">
+				{ctcms:vod table="vod" field="id,name,pic,info,rhits,year,type,addtime"" where="" limit="8" order="rhits desc"}
+				<div class="mdui-col fllist">
+					<a href="[vod:link]">
+						<div class="spimg mdui-img-rounded">
+							<span class="{if:'[vod:info]'=='超清'}qxdbd{elseif:'[vod:info]'=='高清'}qxdhd{elseif:'[vod:info]'==''}meiyou{else}qxdts{end if}">[vod:info]</span>
+							<img src="[vod:pic]" />
+							<div class="spjj">
+								<div class="title"><nobr>[vod:name]</nobr></div>
+								<div class="subtitle"><nobr>[vod:type] / <em>[vod:year]</em></nobr></div>
+							</div>
+						</div>
+					</a>
+				</div>
+				{/ctcms:vod}
+			</div>
+		</div>
+	</div>
+	<!--左end-->
+	<div class="mdui-col-xs-6 mdui-col-sm-4 mdui-hidden-sm-down">
+		<!--右-->
+		<div class="zydylist">
+			<div class="zybt"><h3>更新动态</h3></div>
+			<div class="mdui-card mdui-shadow-0" style="background: #fbfbfb;">
+				<div class="mdui-card-media">
+					<img src="https://wx4.sinaimg.cn/large/006bfoyggy1flsxlckak4j317r0ltk4l.jpg" />
+					<div class="mdui-card-menu">
+						<button id="shoucang" class="mdui-btn mdui-btn-icon mdui-text-color-white" title="收藏本站">
+							<i class="mdui-icon material-icons">grade</i>
+						</button>
+					</div>
+				</div>
+				<div class="mdui-list">
+					{ctcms:vod table="vod" field="id,name,pic,info,addtime,text" where="" limit="5" order="addtime desc"}
+					<a href="[vod:link]" class="mdui-list-item mdui-ripple" title="[vod:name]在线观看，[vod:text len=20]">
+						<span class="gxtime">[vod:addtime style=time]</span>
+						<span class="gxtxt">[vod:name] <em>[vod:info]</em></span>
+					</a>
+					{/ctcms:vod}
+				</div>
+				<div class="mdui-card-actions mdui-text-center">
+					<button onclick="window.open('http://connect.qq.com/widget/shareqq/index.html?site={ctcms_name}&amp;title={ctcms_name}&amp;summary={ctcms_description}&amp;pics=http://{ctcms_url}{ctcms_indextemplets}/img/logo.png&amp;url=http://{ctcms_url}')" class="mdui-btn mdui-ripple"><i class="mdui-icon material-icons">share</i> 分享到QQ</button>
+					<button onclick="window.open('http://service.weibo.com/share/share.php?appkey=&amp;title={ctcms_name} - {ctcms_description}&amp;url=http://{ctcms_url}&amp;pic=http://{ctcms_url}{ctcms_indextemplets}/img/logo.png&amp;searchPic=false&amp;style=simple')" class="mdui-btn mdui-ripple"><i class="mdui-icon material-icons">share</i> 分享到 Weibo</button>
+					<button class="mdui-btn mdui-ripple mdui-btn-block" mdui-dialog="{target: '#reward'}"><i class="mdui-icon material-icons">local_atm</i> 赏</button>
+					<div class="mdui-dialog" id="reward">
+						<div class="mdui-tab mdui-tab-centered mdui-p-a-1" mdui-tab>
+							<a href="#AliPay" class="mdui-ripple mdui-tab-active">AliPay</a>
+							<a href="#WeChatPay" class="mdui-ripple">WeChatPay</a>
+						</div>
+						<div id="AliPay" class="mdui-p-a-2"><img class="payqrcode" src="{ctcms_indextemplets}/img/alipay.svg" /></div>
+						<div id="WeChatPay" class="mdui-p-a-2"><img class="payqrcode" src="{ctcms_indextemplets}/img/WeChat.svg" /></div>
+						<div class="mdui-p-a-2" mdui-dialog-close><button class="mdui-btn mdui-color-theme-accent mdui-ripple">Close</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--右end-->
+</div>
+
+{ctcms_bottom}

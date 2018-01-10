@@ -1,0 +1,187 @@
+{ctcms_head} 
+
+
+<style>
+#Snow{position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: -1;background: rgba(125,137,95,0.0);pointer-events: none;}
+</style>
+
+<div class="mdui-row">
+  <div class="mdui-col-xs-12 mdui-col-sm-8 sjzsy">
+  	<div class="zydylist">
+	<div class="zybt mdui-hidden-sm-down"><h3><a class="mdui-text-color-black-icon" href="[vod:classlink]">[[vod:classname]]</a> [vod:name]</h3></div>
+	<div class="bftop mdui-hidden-sm-down"><marquee scrollamount="3">{ctcms_name}提醒您：正在播放的是由[vod:zhuyan]主演的[vod:name]。 </marquee></div>
+  	<div class="bfplayer">
+  	{ctcms_player}
+ 	</div>
+ 	<div class="bfdb mdui-center mdui-color-light-blue-300">
+ <span>如视频在10秒内无法播放请尝试刷新或更换线路</span>
+</div>
+<div class="bfspjs  mdui-hidden-sm-down"><p>简介：[vod:text]</p></div>
+
+
+
+ 	</div>
+  </div>
+
+
+
+<!---手机自适应部分-->
+<div class="mdui-hidden-md-up">
+		<div class="mdui-clearfix">
+		{if:'[vod:classname]'=='电影'}
+		{else}
+		
+				<div class="mdui-float-left">
+					<button class="mdui-btn mdui-btn-block mdui-color-theme-white mdui-ripple mdui-text-left" onclick="window.location='{ctcms_slink}'">播放上一集</button>
+				</div>
+				<div class="mdui-float-right">
+					<button class="mdui-btn mdui-btn-block mdui-color-theme-white mdui-ripple mdui-text-right" onclick="window.location='{ctcms_xlink}'">播放下一集</button>
+				</div>
+			  
+		{end if}
+	</div>
+
+  
+
+	
+	  <div class="mdui-card-content">
+			
+			<div class="mdui-row">
+					<div class="mdui-col-xs-8 mdui-col-sm-6">
+							<div class="mdui-card-primary-title">[vod:name]</div>
+							<div class="mdui-card-primary-subtitle">更新时间： [vod:addtime style=Y-m-d]</div>
+					</div>
+					
+					<div class="mdui-col-xs-4 mdui-col-sm-6  mdui-text-right">
+
+					<button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-dialog="{target: '#share'}"><i class="mdui-icon material-icons"></i></button>
+					<div class="mdui-dialog mdui-text-center" id="share">
+							<ul class="mdui-list">
+							<a mdui-dialog-close href="http://service.weibo.com/share/share.php?appkey=&amp;title=我正在{ctcms_name}在线观看[vod:name]，一起来看吧。&amp;url=http://{ctcms_url}[vod:link]&amp;pic=http://{ctcms_url}{ctcms_indextemplets}/img/logo.png&amp;searchPic=false&amp;style=simple" target="_blank">
+							<li class="mdui-list-item mdui-ripple">
+							  <div class="mdui-list-item-content">分享到 Weibo</div>
+							</li>
+							</a>
+							<a mdui-dialog-close href="http://connect.qq.com/widget/shareqq/index.html?site={ctcms_name}&amp;title=[vod:name]-在线播放&amp;summary=我正在{ctcms_name}在线观看[vod:name]，一起来看吧。&amp;pics=http://{ctcms_url}{ctcms_indextemplets}/img/logo.png&amp;url=http://{ctcms_url}[vod:link]" target="_blank">
+							<li class="mdui-list-item mdui-ripple">
+							  <div class="mdui-list-item-content">分享到 QQ</div>
+							</li>
+							<a mdui-dialog-close href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://{ctcms_url}[vod:link]&desc=[vod:name]-在线播放&title=我正在{ctcms_name}在线观看[vod:name]，一起来看吧，地址：&summary=我正在{ctcms_name}在线观看[vod:name]，一起来看吧。&site=={ctcms_name}" target="_blank">
+								<li class="mdui-list-item mdui-ripple">
+								  <div class="mdui-list-item-content">分享到 Qzone</div>
+								</li>
+								</a>
+
+							
+							<li class="mdui-list-item mdui-ripple">
+							  <div class="mdui-list-item-content" mdui-dialog-close>取消</div>
+							</li>
+							</ul>
+							</div>
+					 </div>
+				  </div>
+
+			<div class="mdui-collapse" mdui-collapse>
+				  
+
+				  {ctcms_zu}
+				  <div class="mdui-collapse-item mdui-collapse-item-open">
+						<div class="mdui-collapse-item-header"><p>{name}</p></div>
+						<div class="mdui-collapse-item-body">
+							<div class="mdui-list">
+								<ul class="bfxj">
+									{ctcms_ji}
+									<li><a class="btn-xuanji" href="{link}">{name}</a></li>
+									{/ctcms_ji}
+								 </ul>
+							</div>
+						</div>
+					  </div>
+				  {/ctcms_zu}
+
+				  <div class="mdui-collapse-item mdui-collapse-item-open">
+						<div class="mdui-collapse-item-header"><p>简介</p></div>
+						<div class="mdui-collapse-item-body">
+						  <p class="mdui-text-color-black-secondary">[vod:text]</p>
+						</div>
+					  </div>
+			</div>
+		</div>
+
+</div>
+<!--手机自适应部分end-->
+
+  
+  <div class="mdui-col-xs-6 mdui-col-sm-4 mdui-hidden-sm-down">
+  	<div class="zydylist">
+			<div class="zybt"><h3>选集</h3></div>
+			<div class="mdui-card mdui-shadow-0" style="background: #fbfbfb;">
+				<div class="mdui-card-media">
+					<img src="https://wx4.sinaimg.cn/large/006bfoyggy1flsxlckak4j317r0ltk4l.jpg" />
+					<div class="mdui-card-menu">
+						<button id="shoucang" class="mdui-btn mdui-btn-icon mdui-text-color-white" title="收藏本站">
+							<i class="mdui-icon material-icons">grade</i>
+						</button>
+					</div>
+				</div>
+
+		{ctcms_zu}
+		<div class="mdui-list">
+		<span class="bfzxbt" style="">{name}</span>
+    	<ul class="bfxj">
+				{ctcms_ji}
+				<li><a class="btn-xuanji" href="{link}">{name}</a></li>
+   		{/ctcms_ji}
+   	
+		   </ul>
+		</div>
+    	{/ctcms_zu}
+
+
+  
+  
+
+  <div class="mdui-list">
+  	<span class="bfzxbt">更新动态</span>
+		
+		{ctcms:vod table="vod" field="id,name,pic,info,addtime,text" where="" limit="5" order="addtime desc"}
+					<a href="[vod:link]" class="mdui-list-item mdui-ripple" title="[vod:name]在线观看">
+						<span class="gxtime">[vod:addtime style=time]</span>
+						<span class="gxtxt">[vod:name] <em>[vod:info]</em></span>
+					</a>
+					{/ctcms:vod}
+				</div>
+				
+				<div class="mdui-card-actions mdui-text-center">
+					<button onclick="window.open('http://connect.qq.com/widget/shareqq/index.html?site={ctcms_name}&amp;title=[vod:name]-在线播放&amp;summary=我正在{ctcms_name}在线观看[vod:name]，一起来看吧。&amp;pics=http://{ctcms_url}{ctcms_indextemplets}/img/logo.png&amp;url=http://{ctcms_url}[vod:link]')" class="mdui-btn mdui-ripple"><i class="mdui-icon material-icons">share</i> 分享到QQ</button>
+					<button onclick="window.open('http://service.weibo.com/share/share.php?appkey=&amp;title=我正在{ctcms_name}在线观看[vod:name]，一起来看吧。&amp;url=http://{ctcms_url}[vod:link]&amp;pic=http://{ctcms_url}{ctcms_indextemplets}/img/logo.png&amp;searchPic=false&amp;style=simple')" class="mdui-btn mdui-ripple"><i class="mdui-icon material-icons">share</i> 分享到 Weibo</button>
+					<button class="mdui-btn mdui-ripple mdui-btn-block" mdui-dialog="{target: '#reward'}"><i class="mdui-icon material-icons">local_atm</i> 赏</button>
+					<div class="mdui-dialog" id="reward">
+						<div class="mdui-tab mdui-tab-centered mdui-p-a-1" mdui-tab>
+							<a href="#AliPay" class="mdui-ripple mdui-tab-active">AliPay</a>
+							<a href="#WeChatPay" class="mdui-ripple">WeChatPay</a>
+						</div>
+						<div id="AliPay" class="mdui-p-a-2"><img class="payqrcode" src="{ctcms_indextemplets}/img/alipay.svg" /></div>
+						<div id="WeChatPay" class="mdui-p-a-2"><img class="payqrcode" src="{ctcms_indextemplets}/img/WeChat.svg" /></div>
+						<div class="mdui-p-a-2" mdui-dialog-close><button class="mdui-btn mdui-color-theme-accent mdui-ripple">Close</button></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+  	
+
+		
+  </div>
+</div>
+
+
+
+
+
+
+{ctcms_bottom}
+
+
+
+

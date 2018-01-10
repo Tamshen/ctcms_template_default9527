@@ -1,0 +1,20 @@
+{ctcms_head} 
+{ctcms:pages table="pages" limit="1" order="id desc"}
+<style>#Snow{z-index: -1;background: rgba(125,137,95,0.0);}</style>
+
+		<div class="mdui-row">
+		<div class="mdui-col-md-6 mdui-col-offset-md-3">
+				<div class="mdui-typo">
+						<h3>[pages:name]</h3>
+						[pages:text]
+					</div>
+		</div>
+		</div>
+
+
+
+
+<script src="{ctcms_indextemplets}/js/pages.js"></script>
+
+{/ctcms:pages}
+{ctcms_bottom}
