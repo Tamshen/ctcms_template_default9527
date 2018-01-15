@@ -2,11 +2,10 @@
 <div id="turn" class="turn mdui-img-rounded">
 	<div class="turn-loading"><img src="{ctcms_indextemplets}/img/loading.gif" alt="{ctcms_name}"/></div>
 		<ul class="turn-pic">
-{ctcms:vod table="vod" field="id,name,pic2,info,year,type" where="tid=1|zid=1" limit="5" order="zhits desc"}
+{ctcms:vod table="vod" field="id,name,pic2,info,year,type" where="tid=1|zid=1" limit="6" order="addtime desc"}	
 <a href="[vod:playlink]"><li style="background-image: url([vod:pic2]);cursor:pointer"><img title="[vod:name] / [vod:year]" alt="[vod:name]" /></li></a>
-{/ctcms:vod}
-<a href="http://mir2.live/?c=pages&id=index"><li style="background-image: url(//wx3.sinaimg.cn/large/006bfoyggy1fmv44p5ng8j30z40f1tp3.jpg);cursor:pointer"><img title="2018新年快乐" alt="2018新年快乐" /></li></a>
-		</ul>
+{/ctcms:vod}		
+</ul>
 </div>
 
 	

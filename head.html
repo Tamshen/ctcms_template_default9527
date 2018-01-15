@@ -19,140 +19,14 @@
 		{ctcms_stat}
 	</head>
 	<body class="mdui-theme-accent-blue">
-		<!-- Snow Start -->
-<canvas id="Snow"></canvas>
-<script>
-    if(screen && screen.width > 768){
-        (function() {
-            var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame ||
-            function(callback) {
-                window.setTimeout(callback, 1000 / 60);
-            };
-            window.requestAnimationFrame = requestAnimationFrame;
-        })();
-        
-        (function() {
-            var flakes = [],
-                canvas = document.getElementById("Snow"),
-                ctx = canvas.getContext("2d"),
-                flakeCount = 100,
-                mX = -100,
-                mY = -100;
-            
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            function snow() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-                for (var i = 0; i < flakeCount; i++) {
-                    var flake = flakes[i],
-                        x = mX,
-                        y = mY,
-                        minDist = 150,
-                        x2 = flake.x,
-                        y2 = flake.y;
-            
-                    var dist = Math.sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y)),
-                        dx = x2 - x,
-                        dy = y2 - y;
-            
-                    if (dist < minDist) {
-                        var force = minDist / (dist * dist),
-                            xcomp = (x - x2) / dist,
-                            ycomp = (y - y2) / dist,
-                            deltaV = force / 2;
-            
-                        flake.velX -= deltaV * xcomp;
-                        flake.velY -= deltaV * ycomp;
-            
-                    } else {
-                        flake.velX *= .98;
-                        if (flake.velY <= flake.speed) {
-                            flake.velY = flake.speed
-                        }
-                        flake.velX += Math.cos(flake.step += .05) * flake.stepSize;
-                    }
-            
-                    ctx.fillStyle = "rgba(255,255,255," + flake.opacity + ")";
-                    flake.y += flake.velY;
-                    flake.x += flake.velX;
-                        
-                    if (flake.y >= canvas.height || flake.y <= 0) {
-                        reset(flake);
-                    }
-            
-                    if (flake.x >= canvas.width || flake.x <= 0) {
-                        reset(flake);
-                    }
-            
-                    ctx.beginPath();
-                    ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-                requestAnimationFrame(snow);
-            };
-            
-            function reset(flake) {
-                flake.x = Math.floor(Math.random() * canvas.width);
-                flake.y = 0;
-                flake.size = (Math.random() * 3) + 2;
-                flake.speed = (Math.random() * 1) + 0.5;
-                flake.velY = flake.speed;
-                flake.velX = 0;
-                flake.opacity = (Math.random() * 0.5) + 0.3;
-            }
-            
-            function init() {
-                for (var i = 0; i < flakeCount; i++) {
-                    var x = Math.floor(Math.random() * canvas.width),
-                        y = Math.floor(Math.random() * canvas.height),
-                        size = (Math.random() * 3) + 2,
-                        speed = (Math.random() * 1) + 0.5,
-                        opacity = (Math.random() * 0.5) + 0.3;
-            
-                    flakes.push({
-                        speed: speed,
-                        velY: speed,
-                        velX: 0,
-                        x: x,
-                        y: y,
-                        size: size,
-                        stepSize: (Math.random()) / 30 * 1,
-                        step: 0,
-                        angle: 180,
-                        opacity: opacity
-                    });
-                }
-            
-                snow();
-            };
-            
-            document.addEventListener("mousemove", function(e) {
-                mX = e.clientX,
-                mY = e.clientY
-            });
-            window.addEventListener("resize", function() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerheight;
-            });
-            init();
-        })();
-    }
-</script>
-<style>
-#Snow{position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 99999;background: rgba(125,137,95,0.1);pointer-events: none;}
-</style>
-<!-- Snow End -->
 		<div class="main mdui-container-fluid mdui-container mdui-img-rounded mdui-color-white">
+
 			<div class="mdui-row mdui-hidden-md-up menu" id="banner">
 					<div class="mdui-row" style="margin-right: 0px;">
 							<div class="mdui-col-xs-8 mdui-col-sm-6">
-								<a href="{ctcms_path}"><img src="{ctcms_indextemplets}/img/2018mlogo.png" height="36px" alt="{ctcms_name}"></a>
+								<a href="{ctcms_path}"><img src="{ctcms_indextemplets}/img/logo.png" height="36px" alt="{ctcms_name}"></a>
 							</div>
-							
-							<div class="mdui-col-xs-4 mdui-col-sm-6  mdui-text-right">
-
+							    <div class="mdui-col-xs-4 mdui-col-sm-6  mdui-text-right">
 									<div class="mdui-row">
 											<div class="mdui-col-xs-8 mdui-col-sm-6" style="padding-right: 0px;">
 													<div class="mdui-textfield mdui-textfield-expandable mdui-float-right">
@@ -161,46 +35,29 @@
 																	<input class="mdui-textfield-input" type="text" id="seh_v" name="wd" placeholder="搜点什么？" />
 															</form>
 															<button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
-			
 														</div>
 											</div>
 											<div class="mdui-col-xs-4 mdui-col-sm-6" style="padding-left: 0px;">
 												<button class="mdui-textfield-icon mdui-btn mdui-btn-icon" id="mbmenu"><i class="mdui-icon material-icons">menu</i></button>
 												<button class="mdui-textfield-close mdui-btn mdui-btn-icon mdui-hidden" id="mbmenux"><i class="mdui-icon material-icons">close</i></button>
 											</div>
-										  </div>
-
-
-											
-											
-							</div>
-							
-							
-
-
-							<div class="mdui-col-xs-12 mdui-text-center mdui-hidden" id="mbmenu2">
+									</div>		
+							    </div>
+						    	<div class="mdui-col-xs-12 mdui-text-center mdui-hidden" id="mbmenu2">
 									<div class="mdui-btn-group">
 											<a href="{ctcms_path}" title="首页"><button class="mdui-btn mdui-ripple">首页</button></a>
 											{ctcms:class table="class" field="id,name" where="fid=0" limit="4" order="xid asc"}
 											<a href="{ctcms_url whole=[class:id]}" title="[class:name]"><button class="mdui-btn mdui-ripple">[class:name]</button></a>
 											{/ctcms:class}
 											<a href="{ctcms_url opt=index/jx}" title="视频解析"><button class="mdui-btn mdui-ripple">解析</button></a>
-										</div>
-									
-							 </div>
-						  </div>
-						  <span class="line"></span>
-					  </div>
+									</div>
+							    </div>
+					</div><span class="line"></span>
+			</div>
 					 
-					  
-
-
-
-
-
 			<div class="mdui-row mdui-valign mdui-hidden-sm-down" style="padding: 2em 1em 1.8em;">
 				<div class="mdui-col-xs-6">
-					<a href="{ctcms_path}"><img src="{ctcms_indextemplets}/img/2018logo.png" height="36px" alt="{ctcms_name}"></a>
+					<a href="{ctcms_path}"><img src="{ctcms_indextemplets}/img/logo.png" height="36px" alt="{ctcms_name}"></a>
 				</div>
 				<div class="mdui-col-xs-6 mdui-text-right">
 					<div class="mdui-btn-group">
